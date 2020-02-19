@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.In;
 public class Exercise9 {
 
     public static void main(String[] args) {
-        String fileName = "algs4/1/3/9.txt";
+        String fileName = "test_data/1/3/9.txt";
         In in = new In(fileName);
         String input = in.readAll();
         String output = addLeftBracket(input);

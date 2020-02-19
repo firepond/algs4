@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.In;
 public class InfixToPostfix {
 
     public static void main(String[] args) {
-        String fileName = "algs4/1/3/10.txt";
+        String fileName = "test_data/1/3/10.txt";
         In in = new In(fileName);
         String input = in.readAll();
         String output = infixToPostfix(input);

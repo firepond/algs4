@@ -12,7 +12,7 @@ public class Parentheses {
     public static void main(String[] args) {
         Stack<Character> stack = new Stack<Character>();
         boolean isPaired = true;
-        String file = "algs4/1/3/brackets.txt";
+        String file = "test_data/1/3/brackets.txt";
         In in = new In(file);
         while (in.hasNextChar()) {
 

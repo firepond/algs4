@@ -70,7 +70,7 @@ public class DoublingStackOfStrings<Item> implements Iterable<Item> {
 	public static void main(String[] args) {
 		DoublingStackOfStrings<String> s;
 		s = new DoublingStackOfStrings<String>();
-		String fileName = "algs4/1/3/8.txt";
+		String fileName = "test_data/1/3/8.txt";
 		In in = new In(fileName);
 		while (!in.isEmpty()) {
 			String item = in.readString();

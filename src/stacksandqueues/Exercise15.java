@@ -13,7 +13,7 @@ public class Exercise15 {
         int k = 3;
         Queue<String> s;
         s = new Queue<String>();
-        String filename = "algs4-data/1/3/15.txt";
+        String filename = "test_data/1/3/15.txt";
         In in = new In(filename);
         while (!in.isEmpty()) {
             String item = in.readString();
