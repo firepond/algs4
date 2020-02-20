@@ -2,9 +2,11 @@ package analysisofalgorithms;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdDraw;
 
 public class DoublingTest {
+
+
+    
     private static final int MAXIMUM_INTEGER = 1000000;
 
     // This class should not be instantiated.

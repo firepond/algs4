@@ -20,7 +20,7 @@ public class JavaGenerator {
 
         String func = "    public static void funcName(int a) {\n" + "    \n" + "    }\n";
 
-        for (int i = 1; i <= 45; i++) {
+        for (int i = 2; i <= 10; i++) {
             File f = new File("./src/" + packageName + "/" + className + i + ".java");
             String commnets = "/**\n * @author firepond \n * algs4 exercise " + part + "." + i + "\n */\n\n";
 

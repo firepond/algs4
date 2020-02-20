@@ -12,7 +12,7 @@ public class ThreeSum {
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
                 for (int k = j + 1; k < n; k++) {
-                    if (a[i] + a[j] + a[k] == 0) {
+                    if ((long)a[i] + a[j] + a[k] == 0) {
                         count++;
                     }
                 }
@@ -22,6 +22,8 @@ public class ThreeSum {
     }
 
     public static void main(String[] args) {
+        int[] test = {2147483647, 1, -2147483648};
+        StdOut.println(count(test));
         String dataPath = "./algs4-data/";
         Out log = new Out("./log/ThreeSum.txt");
         for (int i = 1; i <= 32; i *= 2) {
