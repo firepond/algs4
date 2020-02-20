@@ -2,6 +2,7 @@ package analysisofalgorithms;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdDraw;
 
 public class DoublingTest {
     private static final int MAXIMUM_INTEGER = 1000000;
@@ -33,7 +34,7 @@ public class DoublingTest {
      * @param args the command-line arguments
      */
     public static void main(String[] args) { 
-        for (int n = 250; true; n += n) {
+        for (int n = 250; true; n += 250) {
             double time = timeTrial(n);
             StdOut.printf("%7d %7.1f\n", n, time);
         } 
