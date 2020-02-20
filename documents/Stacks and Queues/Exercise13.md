@@ -1,4 +1,4 @@
-### ALGS4 Exercise 1.2.13
+### ALGS4 Exercise 1.3.13
 
 impossible sequences:
 

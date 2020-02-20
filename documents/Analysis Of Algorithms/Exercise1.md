@@ -1,4 +1,4 @@
-### ALGS4 Exercise 1.2.1
+### ALGS4 Exercise 1.4.1
 
 Number of choices: C(N)
 
@@ -10,9 +10,9 @@ s.t. We have A(N)=N(N-1)(N-2) possibilities of arrangements.
 
 Apparently, 6 arrangements for 3 integers.
 
-Then we get:
+Then we get: ![](C:\programming\java\firepond\algs4\documents\Analysis Of Algorithms\TIM截图20200220185408.png)
 
-![C{N)=A(N)=N(N-1)(N-2)/6](http://latex.codecogs.com/gif.latex?C(N)=\\frac{A(N)}{6}=\\frac{N(N-1)(N-2)}{6})
+
 
  
 

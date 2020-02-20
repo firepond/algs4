@@ -1,3 +1,3 @@
-### ALGS4 Exercise 1.2.22
+### ALGS4 Exercise 1.3.22
 
 It places t between x and x.next.

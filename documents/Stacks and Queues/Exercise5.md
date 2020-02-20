@@ -1,4 +1,4 @@
-### ALGS4 Exercise 1.2.5
+### ALGS4 Exercise 1.3.5
 
 Prints 110010.
 

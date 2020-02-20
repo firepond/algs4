@@ -1,4 +1,4 @@
-### ALGS4 Exercise 1.2.2
+### ALGS4 Exercise 1.3.2
 
 (1 left in stack)
 

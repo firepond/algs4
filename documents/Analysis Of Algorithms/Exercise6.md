@@ -1,2 +1,2 @@
-### ALGS4 Exercise 1.2.6
+### ALGS4 Exercise 1.4.6
 
