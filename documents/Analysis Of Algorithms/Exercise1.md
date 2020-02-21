@@ -10,7 +10,7 @@ s.t. We have A(N)=N(N-1)(N-2) possibilities of arrangements.
 
 Apparently, 6 arrangements for 3 integers.
 
-Then we get: ![](.\TIM截图20200220185408.png)
+Then we get: ![](./TIM截图20200220185408.png)
 
 
 
