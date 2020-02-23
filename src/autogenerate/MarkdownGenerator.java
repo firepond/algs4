@@ -6,7 +6,7 @@ public class MarkdownGenerator {
 
     public static void main(String[] args) {
         int todo = 4;
-        for (int i = 5; i <= 7; i++) {
+        for (int i = 9; i <= 9; i++) {
             File f = new File("./documents/Analysis Of Algorithms/Exercise" + i + ".md");
             try {
                 FileWriter s = new FileWriter(f);
