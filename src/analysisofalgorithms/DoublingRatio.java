@@ -2,7 +2,6 @@ package analysisofalgorithms;
 
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Out;
-import edu.princeton.cs.algs4.StdOut;
 
 public class DoublingRatio {
     private static final int MAXIMUM_INTEGER = 1000000;
