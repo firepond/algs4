@@ -2,6 +2,8 @@ package stacksandqueues;
 
 import java.util.Iterator;
 
+import edu.princeton.cs.algs4.StdOut;
+
 public class Queue<Item> implements Iterable<Item> {
     private Node first;
     private Node last;
@@ -10,6 +12,17 @@ public class Queue<Item> implements Iterable<Item> {
     private class Node {
         Item item;
         Node next;
+    }
+
+    public Queue(Queue<Item> q) {
+        while (this.N < q.N) {
+            Item item = q.dequeue();
+            q.enqueue(item);
+            this.enqueue(item);
+        }
+    }
+
+    public Queue() {
     }
 
     public boolean isEmpty() {
@@ -72,6 +85,22 @@ public class Queue<Item> implements Iterable<Item> {
         public void remove() {
 
         }
+    }
+
+    public static void main(String[] args) {
+        Queue<Integer> q = new Queue<Integer>();
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        StdOut.println(q);
+        Queue<Integer> r = new Queue<Integer>(q);
+        StdOut.println(r);
+        q.dequeue();
+        StdOut.println(q);
+        StdOut.println(r);
+        q.enqueue(4);
+        StdOut.println(q);
+        StdOut.println(r);
     }
 
 }

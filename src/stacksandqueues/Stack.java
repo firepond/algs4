@@ -13,6 +13,20 @@ public class Stack<Item> implements Iterable<Item> {
         Node next;
     }
 
+    public Stack() {
+
+    }
+
+    public Stack(Stack<Item> s) {
+        Stack<Item> temp = new Stack<Item>();
+        for (Item x : s) {
+            temp.push(x);
+        }
+        for (Item x : temp) {
+            this.push(x);
+        }
+    }
+
     public boolean isEmpty() {
         return first == null;
     }
@@ -85,16 +99,19 @@ public class Stack<Item> implements Iterable<Item> {
 
     public static void main(String[] args) {
 
-        Stack<String> stack = new Stack<>();
-        stack.push("First Item");
-        stack.push("Second Item");
-        stack.push("Third Item");
-
-        Stack<String> copy = copy(stack);
-        stack.pop();
-
-        StdOut.println(stack);
-        StdOut.println(copy);
+        Stack<Integer> q = new Stack<Integer>();
+        q.push(1);
+        q.push(2);
+        q.push(3);
+        StdOut.println(q);
+        Stack<Integer> r = new Stack<Integer>(q);
+        StdOut.println(r);
+        q.pop();
+        StdOut.println(q);
+        StdOut.println(r);
+        q.push(4);
+        StdOut.println(q);
+        StdOut.println(r);
 
     }
 

@@ -29,7 +29,4 @@ public class Exercise15 {
 
     }
 
-    public static void funcName(int a) {
-
-    }
 }
