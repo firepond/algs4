@@ -26,7 +26,7 @@ public class LinkedList<Item> implements Iterable<Item> {
         return N == 0;
     }
 
-    public void add(Item item) {
+    public void addFirst(Item item) {
         if (isEmpty()) {
             first = new Node();
             first.item = item;
@@ -55,7 +55,7 @@ public class LinkedList<Item> implements Iterable<Item> {
         N++;
     }
 
-    public void delete() {
+    public void deleteFirst() {
         if (!isEmpty()) {
             first = first.next;
             N--;
@@ -96,7 +96,7 @@ public class LinkedList<Item> implements Iterable<Item> {
         N--;
     }
 
-    public boolean find(String key) {
+    public boolean find(Item key) {
         if (isEmpty()) {
             return false;
         }
@@ -133,7 +133,7 @@ public class LinkedList<Item> implements Iterable<Item> {
         }
     }
 
-    private void removeHead(String key) {
+    private void removeHead(Item key) {
         while (first.item.equals(key)) {
             if (first.next != null) {
                 first = first.next;
@@ -146,7 +146,7 @@ public class LinkedList<Item> implements Iterable<Item> {
         }
     }
 
-    private void removeBody(String key) {
+    private void removeBody(Item key) {
         if (first.next != null) {
             Node current = first.next;
             Node previous = first;
@@ -168,9 +168,11 @@ public class LinkedList<Item> implements Iterable<Item> {
         }
     }
 
-    public void remove(LinkedList<Item> list, String key) {
+    public void remove(LinkedList<Item> list, Item key) {
         list.removeHead(key);
-        list.removeBody(key);
+        if (!list.isEmpty()) {
+            list.removeBody(key);
+        }
     }
 
     public Node removeNthFromEnd(Node head, int n) {
