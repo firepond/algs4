@@ -1,16 +1,12 @@
 package test;
 
+import edu.princeton.cs.algs4.*;
+
 public class HelloWorld {
     public static void main(String[] args) {
-        int[] myArray = { 1, 2, 3, 4, 5 };
-        ChangeIt.doIt(myArray);
-        for (int j = 0; j < myArray.length; j++)
-            System.out.print(myArray[j] + " ");
-    }
-}
-
-class ChangeIt {
-    static void doIt(int[] z) {
-        z = null;
+        int[] a = StdIn.readAllInts();
+        for(int x:a) {
+            StdOut.println(x);
+        }
     }
 }
