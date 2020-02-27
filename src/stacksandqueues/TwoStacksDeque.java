@@ -9,12 +9,12 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class TwoStacksDeque {
 
+    Deque d;
+
+
     public static void main(String[] args) {
         StdOut.println("Exercises makes perfect");
 
     }
 
-    public static void funcName(int a) {
-    
-    }
 }

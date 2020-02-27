@@ -17,6 +17,21 @@ public class Stack<Item> implements Iterable<Item> {
 
     }
 
+    public Stack<Item> catenation(Stack<Item> a, Stack<Item> b) {
+        Stack<Item> temp = new Stack<Item>();
+        while (!a.isEmpty()) {
+            temp.push(a.pop());
+        }
+        while (!b.isEmpty()) {
+            temp.push(b.pop());
+        }
+        Stack<Item> result = new Stack<Item>();
+        while (!temp.isEmpty()) {
+            result.push(temp.pop());
+        }
+        return result;
+    }
+
     public Stack(Stack<Item> s) {
         Stack<Item> temp = new Stack<Item>();
         for (Item x : s) {
