@@ -16,6 +16,7 @@ public class Stack<Item> implements Iterable<Item> {
     public Stack() {
 
     }
+    
 
     public Stack<Item> catenation(Stack<Item> a, Stack<Item> b) {
         Stack<Item> temp = new Stack<Item>();
