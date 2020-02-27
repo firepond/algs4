@@ -1,12 +1,16 @@
 package stacksandqueues;
 
 import java.util.Iterator;
+import java.util.ConcurrentModificationException;
 
 import edu.princeton.cs.algs4.StdOut;
 
 public class Stack<Item> implements Iterable<Item> {
     private Node first;
     private int N;
+
+    private int popCount;
+    private int pushCount;
 
     private class Node {
         Item item;
@@ -16,7 +20,6 @@ public class Stack<Item> implements Iterable<Item> {
     public Stack() {
 
     }
-    
 
     public Stack<Item> catenation(Stack<Item> a, Stack<Item> b) {
         Stack<Item> temp = new Stack<Item>();
@@ -57,12 +60,14 @@ public class Stack<Item> implements Iterable<Item> {
         first.item = item;
         first.next = oldFirst;
         N++;
+        pushCount++;
     }
 
     public Item pop() {
         Item item = first.item;
         first = first.next;
         N--;
+        popCount++;
         return item;
     }
 
@@ -98,11 +103,20 @@ public class Stack<Item> implements Iterable<Item> {
     private class StackIterator implements Iterator<Item> {
         private Node current = first;
 
+        private int popStore = popCount;
+        private int pushStore = pushCount;
+
         public boolean hasNext() {
+            if (popCount != popStore || pushCount != pushStore) {
+                throw new ConcurrentModificationException();
+            }
             return current != null;
         }
 
         public Item next() {
+            if (popCount != popStore || pushCount != pushStore) {
+                throw new ConcurrentModificationException();
+            }
             Item item = current.item;
             current = current.next;
             return item;
