@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.StdOut;
  * algs4 exercise 1.3.49
  */
 
-public class Exercise49 {
+public class QueueWithStacks {
 
     public static void main(String[] args) {
         StdOut.println("Exercises makes perfect");
