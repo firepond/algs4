@@ -24,7 +24,6 @@ public class FourSum {
                 for (int k = j + 1; k < array.length; k++) {
                     if (BinarySearch.indexOf(array, -array[i] - array[j] - array[k]) > k) {
                         count++;
-                        
                     }
                 }
             }

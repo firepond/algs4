@@ -16,6 +16,8 @@ public class StackGenerability {
                 itemsCount--;
             } else {
                 itemsCount++;
+
+                
             }
 
             if (itemsCount < 0) {
