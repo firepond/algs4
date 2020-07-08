@@ -4,6 +4,7 @@ import java.io.*;
 
 public class MarkdownGenerator {
 
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         int todo = 4;
         for (int i = 9; i <= 9; i++) {

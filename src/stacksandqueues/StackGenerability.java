@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.StdOut;
  */
 
 public class StackGenerability {
-
+    @SuppressWarnings("unused")
     private static boolean willTheStackUnderflow(String[] inputValues) {
         int itemsCount = 0;
 
@@ -27,7 +27,8 @@ public class StackGenerability {
 
         return false;
     }
-
+    
+    @SuppressWarnings("unused")
     private static boolean canAPermutationBeGenerated(String[] permutation) {
         Stack<Integer> stack = new Stack<>();
         int current = 0;
