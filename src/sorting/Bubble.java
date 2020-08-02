@@ -2,18 +2,17 @@ package sorting;
 
 import edu.princeton.cs.algs4.*;
 
-public class Selection extends Sort {
+public class Bubble extends Sort {
+
     @SuppressWarnings("rawtypes")
     public static void sort(Comparable[] a) {
         int N = a.length;
-        for (int i = 0; i < N; i++) {
-            int min = i;
-            for (int j = i + 1; j < N; j++) {
-                if (less(a[j], a[min])) {
-                    min = j;
+        for (int i = N - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (less(a[j + 1], a[j])) {
+                    exch(a, j + 1, j);
                 }
             }
-            exch(a, i, min);
         }
     }
 

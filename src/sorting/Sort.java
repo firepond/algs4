@@ -3,11 +3,11 @@ package sorting;
 import java.lang.Comparable;
 import edu.princeton.cs.algs4.*;
 
-public class SortExample {
+public class Sort {
     @SuppressWarnings("rawtypes")
     public static void sort(Comparable[] a) {
 
-    }
+    };
 
     /**
      * if v < w, return ture
@@ -25,9 +25,9 @@ public class SortExample {
     }
 
     @SuppressWarnings("rawtypes")
-    private static void show(Comparable[] a) {
+    public static void show(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
-            StdOut.println(a[i] + " ");
+            StdOut.print(a[i] + " ");
         }
         StdOut.println();
     }
@@ -42,11 +42,5 @@ public class SortExample {
         return true;
     }
 
-    public static void main(String[] args) {
-        String[] a = StdIn.readAllStrings();
-        sort(a);
-        assert isSorted(a);
-        show(a);
-    }
 
 }

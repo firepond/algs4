@@ -5,23 +5,20 @@ import edu.princeton.cs.algs4.*;
 public class SortCompare {
     public static double time(String alg, Double[] a) {
         Stopwatch timer = new Stopwatch();
-        // if (alg.equals("Insertion")) {
-        //     Selection.sort(a);
-        // }
 
-        // if (alg.equals("Selection")) {
-        //     Insertion.sort(a);
-        // }
         switch (alg) {
+            case "Bubble":
+                Bubble.sort(a);
+                break;
             case "Insertion":
-            Insertion.sort(a);
-            break;
+                Insertion.sort(a);
+                break;
             case "Selection":
-            Selection.sort(a);
-            break;
+                Selection.sort(a);
+                break;
             case "Shell":
-            Shell.sort(a);
-            break;
+                Shell.sort(a);
+                break;
         }
 
         return timer.elapsedTime();
@@ -42,9 +39,9 @@ public class SortCompare {
 
     public static void main(String[] args) {
         String alg2 = "Insertion";
-        String alg1 = "Shell";
-        int N = 100000;
-        int T = 100;
+        String alg1 = "Bubble";
+        int N = 10000;
+        int T = 10;
         double t1 = timeRandomInput(alg1, N, T);
         double t2 = timeRandomInput(alg2, N, T);
         StdOut.printf("For %d random Doubles\n    %s is", N, alg1);
