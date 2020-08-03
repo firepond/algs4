@@ -6,6 +6,7 @@ public class Selection extends Sort {
     @SuppressWarnings("rawtypes")
     public static void sort(Comparable[] a) {
         int N = a.length;
+        show(a);
         for (int i = 0; i < N; i++) {
             int min = i;
             for (int j = i + 1; j < N; j++) {
@@ -14,14 +15,17 @@ public class Selection extends Sort {
                 }
             }
             exch(a, i, min);
+            show(a);
+
         }
     }
 
     public static void main(String[] args) {
         In in = new In("./algs4-data/tiny.txt");
+        String[] m = "E A S Y Q U E S T I O N".split(" ");
         String[] a = in.readAllStrings();
-        sort(a);
-        assert isSorted(a);
-        show(a);
+        sort(m);
+        assert isSorted(m);
+        show(m);
     }
 }

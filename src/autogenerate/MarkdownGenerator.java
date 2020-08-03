@@ -4,14 +4,12 @@ import java.io.*;
 
 public class MarkdownGenerator {
 
-    @SuppressWarnings("unused")
     public static void main(String[] args) {
-        int todo = 4;
-        for (int i = 9; i <= 9; i++) {
-            File f = new File("./documents/Analysis Of Algorithms/Exercise" + i + ".md");
+        for (int i = 2; i <= 10; i++) {
+            File f = new File("./documents/Sorting/Exercise" + i + ".md");
             try {
                 FileWriter s = new FileWriter(f);
-                s.append("### ALGS4 Exercise 1.4." + i);
+                s.append("### ALGS4 Exercise 2.1." + i);
                 s.append("\n\n");
                 s.flush();
                 s.close();
