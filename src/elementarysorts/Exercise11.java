@@ -1,4 +1,4 @@
-package sorting;
+package elementarysorts;
 
 import java.util.ArrayList;
 

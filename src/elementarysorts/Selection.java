@@ -1,4 +1,4 @@
-package sorting;
+package elementarysorts;
 
 import edu.princeton.cs.algs4.*;
 

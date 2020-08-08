@@ -1,4 +1,4 @@
-package sorting;
+package elementarysorts;
 
 import java.lang.Comparable;
 import edu.princeton.cs.algs4.*;
