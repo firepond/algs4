@@ -11,10 +11,12 @@ public class Shell extends Sort {
         while (h < N / 3) {
             h = 3 * h + 1;
         }
+        show(a);
         while (h >= 1) {
             for (int i = h; i < N; i++) {
                 for (int j = i; j >= h && less(a[j], a[j - h]); j -= h) {
                     exch(a, j, j - h);
+                    show(a);
                 }
             }
             h /= 3;
@@ -23,7 +25,8 @@ public class Shell extends Sort {
 
     public static void main(String[] args) {
         In in = new In("./algs4-data/tiny.txt");
-        String[] a = in.readAllStrings();
+        String s = "E A S Y S H E L L S O R T Q U E S T I O N";
+        String[] a = s.split(" ");
         sort(a);
         assert isSorted(a);
         show(a);
