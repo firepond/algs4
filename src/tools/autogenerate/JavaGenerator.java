@@ -1,4 +1,4 @@
-package autogenerate;
+package tools.autogenerate;
 
 import java.io.*;
 
