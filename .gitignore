@@ -2,7 +2,8 @@ bin
 .vscode
 lib
 algs4-data
-log
-py_tools
+log/
+py_tools/
 references
-src/tools
+src/tools/
+src/test/
