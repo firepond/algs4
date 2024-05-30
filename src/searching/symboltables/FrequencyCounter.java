@@ -6,8 +6,7 @@ public class FrequencyCounter {
 
     // Do not instantiate.
     private FrequencyCounter() { }
-
-  
+    
     public static void main(String[] args) {
         int distinct = 0, words = 0;
         int minlen = 1;
@@ -29,7 +28,7 @@ public class FrequencyCounter {
 
         // find a key with the highest frequency count
         String max = "";
-        st.put(max, 0);
+        st.put(max, 0);  
         for (String word : st.keys()) {
             if (st.get(word) > st.get(max))
                 max = word;
