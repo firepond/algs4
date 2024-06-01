@@ -12,6 +12,7 @@ public class Exercise18 {
     public static void main(String[] args) {
         StdOut.println("mystery(2, 25):" + mystery(2, 25));
         StdOut.println("mystery(3, 11):" + mystery(3, 11));
+        StdOut.println("mystery(1, 1):" + mystery(1, 1));
 
     }
 
