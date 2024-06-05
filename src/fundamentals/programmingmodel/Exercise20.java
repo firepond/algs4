@@ -19,6 +19,10 @@ public class Exercise20 {
             return 0;
         }
 
+        if (N == 1) {
+            return 0;
+        }
+
         return logarithmFactorial(N - 1) + Math.log(N);
     }
 }
