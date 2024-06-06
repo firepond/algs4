@@ -27,19 +27,20 @@ public class WeightedQuickUnionUF {
     }
 
     public boolean connected(int p, int q) {
-        return find(p) == find(q);
+        return root(p) == root(q);
     }
 
-    private int find(int p) {
+    private int root(int p) {
         while (p != id[p]) {
+            id[p] = id[id[p]];
             p = id[p];
         }
         return p;
     }
 
     public void union(int p, int q) {
-        int pRoot = find(p);
-        int qRoot = find(q);
+        int pRoot = root(p);
+        int qRoot = root(q);
         if (pRoot == qRoot) {
             return;
         }
@@ -56,12 +57,14 @@ public class WeightedQuickUnionUF {
     }
 
     public static void main(String[] args) {
-        String parnetPath = "algs4-data";
-        String fileName = "tinyUF.txt";
-        File file = new File(parnetPath, fileName);
+        String parentPath = "algs4-data";
+        // String fileName = "tinyUF.txt";
+        String fileName = "largeUF.txt";
+        File file = new File(parentPath, fileName);
         In in = new In(file);
         int N = in.readInt();
         WeightedQuickUnionUF uf = new WeightedQuickUnionUF(N);
+        int count = 0;
         while (!in.isEmpty()) {
             int p = in.readInt();
             int q = in.readInt();
@@ -69,8 +72,12 @@ public class WeightedQuickUnionUF {
                 continue;
             }
             uf.union(p, q);
-            StdOut.println(p + " " + q);
+            // StdOut.println(p + " " + q);
 
+            count++;
+            if (count % 1000 == 0) {
+                StdOut.println("" + count + " / " + N);
+            }
         }
         StdOut.println(uf.count() + " components");
     }

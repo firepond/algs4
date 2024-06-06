@@ -3,11 +3,11 @@ package fundamentals.unionfind;
 import java.io.File;
 import edu.princeton.cs.algs4.*;
 
-public class UF {
+public class QuickUnionUF {
     private int[] id;
     private int count;
 
-    public UF(int N) {
+    public QuickUnionUF(int N) {
         count = N;
         id = new int[N];
         for (int i = 0; i < N; i++) {
@@ -20,34 +20,10 @@ public class UF {
     }
 
     public boolean connected(int p, int q) {
-        return find(p) == find(q);
+        return root(p) == root(q);
     }
 
-    // // quick-find start
-    // public int find(int p) {
-    // return id[p];
-    // }
-
-    // public void union(int p, int q) {
-    // int pID = find(p);
-    // int qID = find(q);
-
-    // if (pID == qID) {
-    // return;
-    // }
-
-    // for (int i = 0; i < id.length; i++) {
-    // if (id[i] == pID) {
-    // id[i] = qID;
-    // }
-    // }
-    // count--;
-    // }
-    // // quick-find end
-
-    // quick-union start
-
-    private int find(int p) {
+    private int root(int p) {
         while (p != id[p]) {
             p = id[p];
         }
@@ -55,8 +31,8 @@ public class UF {
     }
 
     public void union(int p, int q) {
-        int pRoot = find(p);
-        int qRoot = find(q);
+        int pRoot = root(p);
+        int qRoot = root(q);
         if (pRoot == qRoot) {
             return;
         }
@@ -66,15 +42,15 @@ public class UF {
         count--;
     }
 
-    // quick-union end
-
     public static void main(String[] args) {
-        String parnetPath = "algs4-data";
-        String fileName = "tinyUF.txt";
-        File file = new File(parnetPath, fileName);
+        String parentPath = "algs4-data";
+        // String fileName = "tinyUF.txt";
+        String fileName = "mediumUF.txt";
+        File file = new File(parentPath, fileName);
         In in = new In(file);
         int N = in.readInt();
-        UF uf = new UF(N);
+        QuickUnionUF uf = new QuickUnionUF(N);
+        int count = 0;
         while (!in.isEmpty()) {
             int p = in.readInt();
             int q = in.readInt();
@@ -82,7 +58,11 @@ public class UF {
                 continue;
             }
             uf.union(p, q);
-            StdOut.println(p + " " + q);
+            // StdOut.println(p + " " + q);
+            count++;
+            if (count % 1000 == 0) {
+                StdOut.println(count);
+            }
 
         }
         StdOut.println(uf.count() + " components");
