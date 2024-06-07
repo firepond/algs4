@@ -2,22 +2,24 @@ package fundamentals.unionfind;
 
 import java.io.File;
 
-import edu.princeton.cs.algs4.*;
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 
-public class WeightedQuickUnionUF {
+public class CanonicalWeightedUF {
     private int[] id;
     private int[] sz;
+    private int[] max;
     private int count;
 
-    public WeightedQuickUnionUF(int n) {
+    public CanonicalWeightedUF(int n) {
         count = n;
         id = new int[n];
-        for (int i = 0; i < n; i++) {
-            id[i] = i;
-        }
+        max = new int[n];
         sz = new int[n];
         for (int i = 0; i < n; i++) {
+            id[i] = i;
             sz[i] = 1;
+            max[i] = i;
         }
 
     }
@@ -38,19 +40,33 @@ public class WeightedQuickUnionUF {
         return p;
     }
 
+    /**
+     * find the largest element in the connection component that contains i
+     * 
+     * @param i
+     * @return the id of the largest element
+     */
+    public int find(int i) {
+
+        return max[root(i)];
+    }
+
     public void union(int p, int q) {
         int pRoot = root(p);
         int qRoot = root(q);
         if (pRoot == qRoot) {
             return;
         }
+        int maxRoot = max[p] >= max[q] ? max[p] : max[q];
 
         if (sz[pRoot] < sz[qRoot]) {
             id[pRoot] = qRoot;
             sz[qRoot] += sz[pRoot];
+            max[qRoot] = maxRoot;
         } else {
             id[qRoot] = pRoot;
             sz[pRoot] += sz[qRoot];
+            max[pRoot] = maxRoot;
         }
 
         count--;
@@ -63,7 +79,7 @@ public class WeightedQuickUnionUF {
         File file = new File(parentPath, fileName);
         In in = new In(file);
         int N = in.readInt();
-        WeightedQuickUnionUF uf = new WeightedQuickUnionUF(N);
+        CanonicalWeightedUF uf = new CanonicalWeightedUF(N);
         int count = 0;
         while (!in.isEmpty()) {
             int p = in.readInt();
@@ -80,6 +96,9 @@ public class WeightedQuickUnionUF {
             }
         }
         StdOut.println(uf.count() + " components");
+        for (int i = 0; i < 10; i++) {
+            StdOut.println(uf.find(i));
+        }
     }
 
 }
